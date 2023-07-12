@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Gamers Stop{% endblock title %}
+
+{% block product-list %}
+<div class="product-tray">
+<div class="games-list">
+{% for game in games.all %}
+
+<div class="card my-game-cards" style="width: 18rem;">
+    <a href="{% url 'details' game.id %}">
+        <img src="{{game.image.url}}" class="card-img-top img-game" alt="...">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="{% url 'details' game.id %}" class="anchor-detail">{{game.name}}</a></h5>
+      <p class="card-text game-desc">{{game.description}}</p>
+
+
+      <div class="bot-card-placement">
+        <div class="price-div">
+          <span class="card-text" style="color: rgba(197, 15, 15, 0.895)"><s>Rs.{{game.original_price}}</s></span>
+          <span class="card-text text-success" style="margin-left: 20px">Rs.{{game.selling_price}}</span>
+        </div>
+
+        <div class="btn-card-game">
+          <a href="#" class="btn btn-primary">Add to Cart</a>
+          <a href="#" class="btn btn-primary">Buy it</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endfor %}
+</div>
+</div>
+
+
+{% endblock product-list %}

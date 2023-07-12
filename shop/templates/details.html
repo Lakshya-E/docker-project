@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Gamers Stop{% endblock title %}
+
+{% block product-list %}
+
+  <div class="ui items main-details">
+    <div class="item item-details">
+      <div class="temp-img">
+        <img src="{{game_data.image.url}}" class="img-details">
+      </div>
+      <div class="content content-details">
+        <h1>{{game_data.name}}</h1>
+        <div class="meta">
+          <span>Description</span>
+        </div>
+        <div class="description">
+          <p>{{game_data.description}}</p>
+        </div>
+        <div class="extra">
+            <div class="price-div">
+                <span class="card-text" style="color: rgba(197, 15, 15, 0.895)"><s>Rs.{{game_data.original_price}}</s></span>
+                <span class="card-text text-success" style="margin-left: 20px">Rs.{{game_data.selling_price}}</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+{% endblock product-list %}

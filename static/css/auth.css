@@ -1,0 +1,14 @@
+.nav-brand-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-brand-div>a{
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+    font-size: 30px;
+}
+
+.auth-main{
+    background-color: red;
+}

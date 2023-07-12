@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav-brand-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-brand-div>a{
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+    font-size: 30px;
+}
+
+.brand-name{
+    text-decoration: none;
+}
+
+.card-div{
+    background-color: red;
+}
+
+.games-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.game-desc{
+    width: 100%;
+    margin: 0;
+    padding: 5px 0;
+
+    display: -webkit-box;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.img-game{
+    width:  100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.img-game:hover{
+    scale: 115% 115%;
+}
+
+.img-game-detail{
+    width:  300px;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 0 10px 1px rgba(12, 12, 12, 0.938);
+}
+
+.price-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.btn-card-game{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.product-tray{
+    padding: 10px;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    background-color: #383739;
+}
+
+.my-game-cards{
+    box-shadow: 0 0 10px 1px rgba(75, 75, 75, 0.792);
+    overflow: hidden;
+    background-color: rgba(234, 234, 234, 0.511);
+}
+
+.card-body>h5{
+    text-align: center;
+    cursor: pointer;
+}
+.card-body>h5:hover{
+    text-decoration: underline;
+}
+.anchor-detail{
+    text-decoration: none;
+    color: white;
+}
