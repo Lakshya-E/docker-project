@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_USER=postgres
+      # - POSTGRES_HOST=app_django_postgres_1
+    networks:
+      - default
+      - service-proxy
+    ports:
+      - '5432:5432'
+    
+  web:
+    image: django-docker
+    container_name: app_django
+    depends_on:
+      - db
+    build: .
+    ports:
+      - "8080:8000"
+    command: >
+      sh -c "python manage.py makemigrations && 
+             python manage.py migrate && 
+             python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST=db
+
+networks:
+  service-proxy:
