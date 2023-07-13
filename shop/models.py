@@ -30,8 +30,8 @@ class UserProfile(models.Model):
     """This function creates User after authentication"""
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     id_user = models.IntegerField()
-    email = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
+    bio = models.TextField(blank=True)
+    profile_img = models.ImageField(upload_to='profile_images', default='images/blank-profile.jpg')
 
     def __str__(self):
         return self.username.username 
